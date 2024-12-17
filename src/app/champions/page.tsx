@@ -3,6 +3,19 @@ import { Champion } from "@/types/Champion";
 import { fetchChampionsList } from "@/utils/serverApi";
 import { Suspense } from "react";
 import Loading from "../loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "League Of Legends: 챔피언 목록",
+  description: "리그 오브 레전드의 모든 챔피언 목록을 확인하세요.",
+  openGraph: {
+    title: "League Of Legends: 챔피언 목록",
+    description: "리그 오브 레전드의 모든 챔피언 목록을 확인하세요.",
+    images:
+      "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_1.jpg",
+    url: "http://localhost:3000/champions",
+  },
+};
 
 async function ChampionList() {
   const championList: Champion[] = await fetchChampionsList();
