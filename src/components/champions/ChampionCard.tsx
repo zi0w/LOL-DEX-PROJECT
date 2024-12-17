@@ -23,6 +23,7 @@ export function ChampionCard({ champion }: ChampionCardProps) {
             alt={`${champion.name} 이미지`}
             width={300}
             height={300}
+            className="scale-110"
           />
         </div>
       </div>

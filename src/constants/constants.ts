@@ -1,6 +1,7 @@
 export const API_URL = "https://ddragon.leagueoflegends.com";
 export const LOADING_IMG_URL = `${API_URL}/cdn/img/champion/loading`;
 export const SPLASH_IMG_URL = `${API_URL}/cdn/img/champion/splash`;
+export const ROTATE_API_URL = 'https://kr.api.riotgames.com/lol/platform/v3/champion-rotations'
 
 export const dataUrl = (version: string) =>
   `${API_URL}/cdn/${version}/data/ko_KR`;
