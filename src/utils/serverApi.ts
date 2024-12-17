@@ -1,5 +1,6 @@
 import { API_URL, dataUrl } from "@/constants/constants";
 import { Champion, ChampionDetail } from "@/types/Champion";
+import { Item } from "@/types/Item";
 
 // Data Dragon API 버전 정보
 export async function fetchVersion(): Promise<string> {
@@ -46,4 +47,20 @@ export async function fetchChampionDetail(id: string): Promise<ChampionDetail> {
   const championDetail = data.data[id];
 
   return championDetail;
+}
+
+// 아이템 목록
+export async function fetchItems(): Promise<Item[]> {
+  const version = await fetchVersion();
+  const response = await fetch(`${dataUrl(version)}/item.json`, {
+    cache: "force-cache",
+  });
+
+  if (!response.ok) {
+    throw new Error(`아이템 정보 요청 실패: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const items: Item[] = Object.values(data.data);
+  return items;
 }
