@@ -1,6 +1,19 @@
 import ItemCard from "@/components/items/ItemCard";
 import { Item } from "@/types/Item";
 import { fetchItems, fetchVersion } from "@/utils/serverApi";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "League Of Legends: 아이템 목록",
+  description: "리그 오브 레전드의 모든 아이템 목록을 확인하세요.",
+  openGraph: {
+    title: "League Of Legends: 아이템 목록",
+    description: "리그 오브 레전드의 모든 아이템 목록을 확인하세요.",
+    images:
+      "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_1.jpg",
+    url: "http://localhost:3000/champions",
+  },
+};
 
 export default async function ItemsPage() {
   const version: string = await fetchVersion();

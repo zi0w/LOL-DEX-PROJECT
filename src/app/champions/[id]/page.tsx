@@ -1,4 +1,5 @@
 import {
+  API_URL,
   LOADING_IMG_URL,
   passiveImgUrl,
   spellImgUrl,
@@ -6,6 +7,7 @@ import {
 } from "@/constants/constants";
 import { ChampionDetail, ChampionSkill } from "@/types/Champion";
 import { fetchChampionDetail, fetchVersion } from "@/utils/serverApi";
+import { Metadata } from "next";
 import Image from "next/image";
 
 type DetailProps = {
@@ -13,6 +15,22 @@ type DetailProps = {
     id: string;
   };
 };
+
+export async function generateMetadata({
+  params,
+}: DetailProps): Promise<Metadata> {
+  const champion: ChampionDetail = await fetchChampionDetail(params.id);
+  return {
+    title: `League Of Legends: ${champion.name}`,
+    description: `${champion.lore}`,
+    openGraph: {
+      title: `League Of Legends: ${champion.name}`,
+      description: `${champion.lore}`,
+      images: `${SPLASH_IMG_URL}/${champion.id}_1.jpg`,
+      url: `http://localhost:3000/champions/${params.id}`,
+    },
+  };
+}
 
 export default async function ChampionDetailPage({ params }: DetailProps) {
   const version: string = await fetchVersion();
