@@ -1,5 +1,4 @@
 import {
-  API_URL,
   LOADING_IMG_URL,
   passiveImgUrl,
   spellImgUrl,
