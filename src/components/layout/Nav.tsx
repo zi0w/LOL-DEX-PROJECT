@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import DarkMode from "./DarkMode";
 
 const Nav = () => {
