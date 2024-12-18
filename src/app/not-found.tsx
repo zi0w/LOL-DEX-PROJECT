@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <section className="grid justify-items-center min-h-screen py-8 pb-20 m-auto max-w-custom container">
-      <article className="flex flex-col justify-center items-center gap-10 p-4">
+      <article className="flex flex-col justify-center items-center gap-10 p-4 text-center">
         <div>
           <h2 className="font-bold text-3xl">
             404 - 페이지를 찾을 수 없습니다!

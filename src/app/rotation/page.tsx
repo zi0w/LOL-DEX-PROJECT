@@ -23,7 +23,7 @@ export default function RotationPage() {
   }
 
   if (error) {
-    return <div>에러 발생</div>;
+    return <Error />;
   }
 
   const { allPlayers, newPlayers } = data;
@@ -31,6 +31,13 @@ export default function RotationPage() {
   return (
     <section className="grid justify-items-center min-h-screen py-8 pb-20 m-auto max-w-custom container">
       <article className="flex flex-col gap-16 p-4">
+        <button
+          onClick={() => {
+            throw new Error();
+          }}
+        >
+          테스트 에러
+        </button>
         <div>
           <div className="pb-10">
             <h2 className="font-bold text-3xl">금주 플레이어 로테이션 확인</h2>

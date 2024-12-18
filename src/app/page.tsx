@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <section className="grid justify-items-center min-h-screen py-8 pb-20 m-auto max-w-custom container">
       <article className="flex flex-col gap-10 p-4">
@@ -29,7 +29,10 @@ const HomePage = () => {
               </Link>
             </li>
             <li>
-              <Link href={"/items"} className="flex flex-col gap-2 items-center justify-center"> 
+              <Link
+                href={"/items"}
+                className="flex flex-col gap-2 items-center justify-center"
+              >
                 <Image
                   src="/images/image2.jpg"
                   alt="items-image"
@@ -40,7 +43,10 @@ const HomePage = () => {
               </Link>
             </li>
             <li>
-              <Link href={"/rotation"} className="flex flex-col gap-2 items-center justify-center">
+              <Link
+                href={"/rotation"}
+                className="flex flex-col gap-2 items-center justify-center"
+              >
                 <Image
                   src="/images/image3.jpg"
                   alt="rotation-image"
@@ -55,6 +61,4 @@ const HomePage = () => {
       </article>
     </section>
   );
-};
-
-export default HomePage;
+}
