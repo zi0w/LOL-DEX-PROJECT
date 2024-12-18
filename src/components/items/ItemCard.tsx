@@ -1,6 +1,7 @@
-import { itemUrl } from "@/constants/constants";
-import { Item } from "@/types/Item";
 import Image from "next/image";
+
+import { itemUrl } from "@/lib/constants/constants";
+import { Item } from "@/lib/types/Item";
 
 type ItemCardProps = {
   item: Item;

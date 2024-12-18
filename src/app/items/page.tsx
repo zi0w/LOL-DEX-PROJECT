@@ -1,7 +1,8 @@
-import ItemCard from "@/components/items/ItemCard";
-import { Item } from "@/types/Item";
-import { fetchItems, fetchVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
+
+import ItemCard from "@/components/items/ItemCard";
+import { Item } from "@/lib/types/Item";
+import { fetchItems, fetchVersion } from "@/lib/utils/serverApi";
 
 export const metadata: Metadata = {
   title: "League Of Legends: 아이템 목록",

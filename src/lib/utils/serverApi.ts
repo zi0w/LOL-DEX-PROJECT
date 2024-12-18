@@ -1,6 +1,6 @@
-import { API_URL, dataUrl } from "@/constants/constants";
-import { Champion, ChampionDetail } from "@/types/Champion";
-import { Item } from "@/types/Item";
+import { API_URL, dataUrl } from "@/lib/constants/constants";
+import { Champion, ChampionDetail } from "@/lib/types/Champion";
+import { Item } from "@/lib/types/Item";
 
 // Data Dragon API 버전 정보
 export async function fetchVersion(): Promise<string> {

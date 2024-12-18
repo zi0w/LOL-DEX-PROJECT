@@ -1,10 +1,12 @@
 "use client";
 
-import { Champion } from "@/types/Champion";
-import { getChampionRotation } from "@/utils/rotationApi";
+import { Champion } from "@/lib/types/Champion";
+import { getChampionRotation } from "@/lib/utils/rotationApi";
 import { useQuery } from "@tanstack/react-query";
-import Loading from "../loading";
 import { ChampionCard } from "@/components/champions/ChampionCard";
+
+import Loading from "../loading";
+import Error from "./error";
 
 type RotationProps = {
   allPlayers: Champion[];
@@ -12,9 +14,9 @@ type RotationProps = {
 };
 
 export default function RotationPage() {
-  const { data, isPending, error } = useQuery<RotationProps>({
+  const { data, isPending, error, refetch } = useQuery<RotationProps>({
     queryKey: ["championRotation"],
-    queryFn: getChampionRotation,
+    queryFn: () => getChampionRotation(), // 넥스트에선 콜백으로 사용
     retry: false,
   });
 
@@ -23,7 +25,7 @@ export default function RotationPage() {
   }
 
   if (error) {
-    return <Error />;
+    return <Error error={error} reset={() => refetch()} />;
   }
 
   const { allPlayers, newPlayers } = data;
@@ -31,13 +33,6 @@ export default function RotationPage() {
   return (
     <section className="grid justify-items-center min-h-screen py-8 pb-20 m-auto max-w-custom container">
       <article className="flex flex-col gap-16 p-4">
-        <button
-          onClick={() => {
-            throw new Error();
-          }}
-        >
-          테스트 에러
-        </button>
         <div>
           <div className="pb-10">
             <h2 className="font-bold text-3xl">금주 플레이어 로테이션 확인</h2>

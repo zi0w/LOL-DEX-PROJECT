@@ -1,6 +1,7 @@
-import { ROTATE_API_URL } from "@/constants/constants";
-import { Rotation } from "@/types/Rotation";
 import { NextResponse } from "next/server";
+
+import { ROTATE_API_URL } from "@/lib/constants/constants";
+import { Rotation } from "@/lib/types/Rotation";
 
 export async function GET() {
   const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;

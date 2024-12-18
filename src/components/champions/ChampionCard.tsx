@@ -1,7 +1,8 @@
-import { LOADING_IMG_URL } from "@/constants/constants";
-import { Champion } from "@/types/Champion";
 import Image from "next/image";
 import Link from "next/link";
+
+import { LOADING_IMG_URL } from "@/lib/constants/constants";
+import { Champion } from "@/lib/types/Champion";
 
 type ChampionCardProps = {
   champion: Champion;

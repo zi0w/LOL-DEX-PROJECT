@@ -1,9 +1,11 @@
-import { ChampionCard } from "@/components/champions/ChampionCard";
-import { Champion } from "@/types/Champion";
-import { fetchChampionsList } from "@/utils/serverApi";
-import { Suspense } from "react";
-import Loading from "../loading";
 import { Metadata } from "next";
+import { Suspense } from "react";
+
+import { ChampionCard } from "@/components/champions/ChampionCard";
+import { Champion } from "@/lib/types/Champion";
+import { fetchChampionsList } from "@/lib/utils/serverApi";
+
+import Loading from "../loading";
 
 export const metadata: Metadata = {
   title: "League Of Legends: 챔피언 목록",
@@ -30,7 +32,7 @@ async function ChampionList() {
 }
 
 export default function ChampionsPage() {
-  throw new Error("테스트에러")
+  throw new Error("테스트에러");
   return (
     <>
       <section className="grid justify-items-center min-h-screen py-8 pb-20 m-auto max-w-custom container">

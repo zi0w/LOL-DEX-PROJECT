@@ -1,5 +1,6 @@
-import { Champion } from "@/types/Champion";
-import { Rotation } from "@/types/Rotation";
+import { Champion } from "@/lib/types/Champion";
+import { Rotation } from "@/lib/types/Rotation";
+
 import { fetchChampionsList } from "./serverApi";
 
 export async function getChampionRotation(): Promise<{

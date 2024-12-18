@@ -3,9 +3,9 @@ import {
   passiveImgUrl,
   spellImgUrl,
   SPLASH_IMG_URL,
-} from "@/constants/constants";
-import { ChampionDetail, ChampionSkill } from "@/types/Champion";
-import { fetchChampionDetail, fetchVersion } from "@/utils/serverApi";
+} from "@/lib/constants/constants";
+import { ChampionDetail, ChampionSkill } from "@/lib/types/Champion";
+import { fetchChampionDetail, fetchVersion } from "@/lib/utils/serverApi";
 import { Metadata } from "next";
 import Image from "next/image";
 
