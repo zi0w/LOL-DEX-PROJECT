@@ -33,7 +33,7 @@ export default function RootLayout({
         <Providers>
           <ThemeProvider attribute="class">
             <Header />
-            <main className="dark:bg-[#020817]">{children}</main>
+            <main>{children}</main>
             <Footer />
           </ThemeProvider>
         </Providers>

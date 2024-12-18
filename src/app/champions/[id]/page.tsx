@@ -10,7 +10,6 @@ import {
 import { ChampionDetail, ChampionSkill } from "@/lib/types/Champion";
 import { fetchChampionDetail, fetchVersion } from "@/lib/utils/serverApi";
 
-
 type DetailProps = {
   params: {
     id: string;
@@ -49,7 +48,7 @@ export default async function ChampionDetailPage({ params }: DetailProps) {
     <article className="relative w-full min-h-screen text-white">
       {/* 배경 */}
       <div
-        className="absolute inset-0 -z-10 bg-cover bg-no-repeat bg-fixed opacity-80 grayscale-[60%]"
+        className="absolute inset-0 -z-10 bg-cover bg-no-repeat bg-fixed opacity-80 grayscale-[60%] "
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
         url(${SPLASH_IMG_URL}/${champion.id}_1.jpg)`,
