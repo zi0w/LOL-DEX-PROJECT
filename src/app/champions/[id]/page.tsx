@@ -1,3 +1,6 @@
+import { Metadata } from "next";
+import Image from "next/image";
+
 import {
   LOADING_IMG_URL,
   passiveImgUrl,
@@ -6,8 +9,7 @@ import {
 } from "@/lib/constants/constants";
 import { ChampionDetail, ChampionSkill } from "@/lib/types/Champion";
 import { fetchChampionDetail, fetchVersion } from "@/lib/utils/serverApi";
-import { Metadata } from "next";
-import Image from "next/image";
+
 
 type DetailProps = {
   params: {

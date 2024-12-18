@@ -13,7 +13,7 @@ export function ChampionCard({ champion }: ChampionCardProps) {
 
   return (
     <Link href={`/champions/${champion.id}`}>
-      <div className="rounded-lg border bg-white text-black shadow-sm p-3 md:p-5">
+      <div className="rounded-lg border shadow-sm p-3 md:p-5">
         <div className="flex flex-col space-y-1.5 p-0 pb-4">
           <h3 className="text-2xl font-semibold">{champion.name}</h3>
           <p className="text-sm font-light text-[#828EA1]">{champion.title}</p>

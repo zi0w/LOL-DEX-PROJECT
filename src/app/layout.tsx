@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Providers from "@/lib/providers/Provider";
 import "@/styles/globals.css";
+import { ThemeProvider } from "next-themes";
 
 const pretendard = localFont({
   src: "../../public/fonts/PretendardVariable.woff2",
@@ -30,9 +31,11 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${pretendard.variable} font-pretendard`}>
         <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <ThemeProvider attribute="class">
+            <Header />
+            <main className="dark:bg-[#020817]">{children}</main>
+            <Footer />
+          </ThemeProvider>
         </Providers>
       </body>
     </html>

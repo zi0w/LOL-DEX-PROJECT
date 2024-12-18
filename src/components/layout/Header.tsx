@@ -5,9 +5,15 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between p-3 border-b border-b-black border-t-0">
+    <header className="flex items-center justify-between p-3 border-b border-b-black dark:border-b-white border-t-0 dark:bg-[#020817]">
       <Link href={"/"}>
-        <Image src="/icons/lol.webp" alt="main icon" width={24} height={24} />
+        <Image
+          src="/icons/lol.webp"
+          alt="main icon"
+          width={24}
+          height={24}
+          className="dark:invert"
+        />
       </Link>
       <Nav />
     </header>

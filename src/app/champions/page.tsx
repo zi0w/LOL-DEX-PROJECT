@@ -32,7 +32,6 @@ async function ChampionList() {
 }
 
 export default function ChampionsPage() {
-  throw new Error("테스트에러");
   return (
     <>
       <section className="grid justify-items-center min-h-screen py-8 pb-20 m-auto max-w-custom container">
